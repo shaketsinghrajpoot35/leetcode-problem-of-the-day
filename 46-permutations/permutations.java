@@ -16,14 +16,14 @@ class Solution {
 
         for(int i=0;i<nums.length;i++){
 
-            if(list.contains(nums[i])){
-                continue;
+            if(!list.contains(nums[i])){
+                list.add(nums[i]);
+                backtrack(nums, list, result);
+                //backtracking
+                list.remove(list.size()-1);
             }
 
-            list.add(nums[i]);
-            backtrack(nums, list, result);
-            //backtracking
-            list.remove(list.size()-1);
+            
         }
     }
     public List<List<Integer>> permute(int[] nums) {
