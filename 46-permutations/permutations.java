@@ -29,7 +29,8 @@ class Solution {
     public List<List<Integer>> permute(int[] nums) {
         
         List<List<Integer>> result = new ArrayList<>();
-        backtrack(nums, new ArrayList<>(), result);
+        List<Integer> list = new ArrayList<>();
+        backtrack(nums, list, result);
         return result;
     }
     
