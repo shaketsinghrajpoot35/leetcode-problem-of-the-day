@@ -2,8 +2,14 @@ class Solution {
 
     public void  backtrack(int idx, String digits, StringBuilder sb, List<String> ans, Map<Character, String> map){
 
+        // //base case
+        // if(sb.length() == digits.length()){
+        //     ans.add(sb.toString());
+        //     return;
+        // }
+
         //base case
-        if(sb.length() == digits.length()){
+        if(idx == digits.length()){
             ans.add(sb.toString());
             return;
         }
