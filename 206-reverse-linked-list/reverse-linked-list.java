@@ -9,7 +9,13 @@
  * }
  */
 
+
+
+
+
 class Solution {
+
+    ListNode prev;
 
     public ListNode recursionReverseList(ListNode prev, ListNode curr){
 
