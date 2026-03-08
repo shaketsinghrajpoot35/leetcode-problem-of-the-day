@@ -24,7 +24,9 @@ class Solution {
             return map.get(n);
         }
 
-        return fibHelper(n-1) + fibHelper(n-2);
+        int resultOfSubProblems = fibHelper(n-1) + fibHelper(n-2);
+        map.put(n,resultOfSubProblems);
+        return map.get(n);
 
     }
     public int fib(int n) {
