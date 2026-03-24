@@ -1,10 +1,9 @@
 
 class Solution {
 
-    ListNode head;
-    ListNode curr;
+   
 
-    public void mergeTwoListsHelper(ListNode list1, ListNode list2){
+    public void mergeTwoListsHelper(ListNode list1, ListNode list2,ListNode curr){
 
         if(list1 == null && list2 == null){
             return;
@@ -24,24 +23,24 @@ class Solution {
                 curr.next = list1;
                 curr = list1;
                 list1 = list1.next;
-                 mergeTwoListsHelper(list1, list2);
+                 mergeTwoListsHelper(list1, list2,curr);
         }
         
         else{
                 curr.next = list2;
                 curr = list2;
                 list2 = list2.next;
-                mergeTwoListsHelper(list1, list2);
+                mergeTwoListsHelper(list1, list2,curr);
             }
     }
 
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        head = new ListNode(0);
-        curr = head;
+       ListNode dummy = new ListNode(0);
+       ListNode curr = dummy;
 
-        mergeTwoListsHelper(list1, list2);
+        mergeTwoListsHelper(list1, list2,curr);
 
-        return head.next;
+        return dummy.next;
     }
 }
 
