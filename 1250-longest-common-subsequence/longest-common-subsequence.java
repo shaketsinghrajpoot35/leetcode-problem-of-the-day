@@ -6,14 +6,14 @@ class Solution {
         int m = s1.length();
         int n = s2.length();
         int [][]t = new int[m+1][n+1];
+
+        //initialization of t[][] if row or col is 0 so it value is 0
         for(int i=0;i<m+1;i++){
-            
-            for(int j=0;j<n+1;j++){
-                
-               if(i==0 || j==0){
-                  t[i][j] = 0;
-               }
-            }
+            t[i][0] = 0;
+        }
+
+        for(int j=0;j<n+1;j++){
+            t[0][j] = 0;
         }
         
         for(int i=1;i<m+1;i++){
